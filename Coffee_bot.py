@@ -1,4 +1,4 @@
-```ruby
+
 def coffee_bot():
     print('Welcome to the cafe!')
 coffee_bot()
@@ -51,4 +51,4 @@ cup=cup_type()
 print("Alright, that's a" + " " + (size) + " " + (drink_type) + " " + "with" + " " + (cup) + "!")
 name=input('Can I get your name please?')
 print("Thanks," + " " + (name) + " " + "! Your drink will be ready shortly.")
-```
+
