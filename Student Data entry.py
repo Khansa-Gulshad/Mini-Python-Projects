@@ -9,7 +9,7 @@ while ans:
     """)
     ans=input("What would you like to do? ")
     if ans=="1":
-        no=input("How many students? ") 
+        n = int(input("How many students? "))
         student_marks = {} 
         for _ in range(n):
             name, *line = input("Enter students name and score").split() # enter name with marks-space in between and one by one
@@ -27,7 +27,7 @@ while ans:
         for k,v in student_marks.items():
             avg_dic[k]=mean(v)
         print('Student marks:', student_marks[query_name])
-        print("Student average marks:", avg_dic[query_name])
+        print("Student average marks: %.2f" %avg_dic[query_name])
     elif ans=="4":
       print("\n Goodbye") 
       ans = None
