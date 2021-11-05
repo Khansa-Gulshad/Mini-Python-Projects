@@ -27,11 +27,9 @@ while ans:
     elif ans=="3":
         query_name = input("Enter name of student:")
         df['Total marks'] = df.sum(axis=1)
-#         if df['Student Name'] == query_name:
-#             print('Student total marks:\n', df['Total marks'])
         total_marks=(df.loc[df['Student Name'] == query_name])
         print('Student total marks:\n', total_marks)
-#         print("Student percentage:\n")
+#         print("Student percentage:\n", )
     elif ans=="4":
       print("\n Goodbye") 
       ans = None
