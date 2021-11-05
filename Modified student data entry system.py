@@ -26,10 +26,14 @@ while ans:
         print(df) #dataframe after deleting student data
     elif ans=="3":
         query_name = input("Enter name of student:")
-        df['Total marks'] = df.sum(axis=1)
-        total_marks=(df.loc[df['Student Name'] == query_name])
-        print('Student total marks:\n', total_marks)
-#         print("Student percentage:\n", )
+#         # find student rank among others, percentage
+        df['Total marks'] = df.sum(axis=1) # total marks for each student
+        df['Percentage'] = df['Total marks']/400 # percentage for each student
+        df['Rank'] = df['Percentage'].rank(method='dense', ascending=False) # rank for each student based on percentage
+        print(df)
+        print('Student total marks out of 400:\n', df.loc[df['Student Name'] == query_name]['Total marks'].values)
+        print("Student percentage:\n",df.loc[df['Student Name'] == query_name]['Percentage'].values)
+        print("Student rank is:\n",df.loc[df['Student Name'] == query_name]['Rank'].values)
     elif ans=="4":
       print("\n Goodbye") 
       ans = None
