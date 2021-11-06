@@ -28,7 +28,7 @@ while ans:
         query_name = input("Enter name of student:")
 #         # find student rank among others, percentage
         df['Total marks'] = df.sum(axis=1) # total marks for each student
-        df['Percentage'] = df['Total marks']/400 # percentage for each student
+        df['Percentage'] = (df['Total marks']/400)*100 # percentage for each student
         df['Rank'] = df['Percentage'].rank(method='dense', ascending=False) # rank for each student based on percentage
         print(df)
         print('Student total marks out of 400:\n', df.loc[df['Student Name'] == query_name]['Total marks'].values)
